@@ -1,3 +1,5 @@
+// This program will be used to computer the expression like X^Y
+
 #include <iostream>
 #include <cmath>  // For the pow function
 using namespace std;
