@@ -1,5 +1,6 @@
 /* A program that find the BMI of a person given height and weight and 
  * determine the level of BMI of for N persons.
+ * Using for loop stmts
  */
 
 #include <iostream>
