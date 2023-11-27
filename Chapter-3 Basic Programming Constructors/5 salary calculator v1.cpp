@@ -1,3 +1,5 @@
+// A program that used to calculate the salary of an employee.
+
 #include <iostream>
 #include <iomanip>  // For setprecision
 using namespace std;
