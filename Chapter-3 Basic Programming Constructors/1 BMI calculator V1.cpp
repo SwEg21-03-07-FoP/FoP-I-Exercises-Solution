@@ -1,3 +1,5 @@
+// This program designed to caculate the BMI of a given person
+
 #include <iostream>
 using namespace std;
 
