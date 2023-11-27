@@ -1,3 +1,4 @@
+// A program that converts temperature in degree celsius into degree  fahrenheit.
 #include <iostream>
 using namespace std;
 
