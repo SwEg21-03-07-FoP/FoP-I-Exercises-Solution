@@ -4,9 +4,7 @@ using namespace std;
 int main() {
 
     int number;
-    char flag;
 
-  do {
     // Prompt user to enter a number
     cout << "Enter a number: ";
     cin >> number;
@@ -31,10 +29,5 @@ int main() {
             }
     }
 
-    cout<<"Do want to check an other number? (Y/N): ";
-    cin>>flag;
-  } while (flag == 'y' || flag == 'Y');
-
     return 0;
 }
-
