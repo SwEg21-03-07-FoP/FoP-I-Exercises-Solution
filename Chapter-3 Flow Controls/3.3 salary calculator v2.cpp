@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     // Declare the required variables
     int workingHours;
-    double bonusRate, baseSalary,  bonusPayment = 0.0;
+    double bonusRate, baseSalary,  pension, incometax; bonusPayment = 0.0;
 
     // Input the details
     cout << "Enter base salary: ";
@@ -23,10 +23,18 @@ int main() {
           // Calculate gross salary and bonus payment
           bonusPayment = weeklyHours * bonusRate;
     }
+
+    cout<<"Enter income tax rate: ";
+    cin>>incometax;
+
+    // calculate net-salary
+     pension = baseSalary * 0.07;
+     float netSalary = (baseSalary + bonusPayment) * incometax;
   
     // Display results
     cout << "Gross Salary: $" << fixed << setprecision(2) << baseSalary + bonusPayment  << endl;
     cout << "Bonus Payment: $" << bonusPayment << endl;
+    cout<<" "Net Salary: $" << netSalary <<endl;
 
     return 0;
 }
