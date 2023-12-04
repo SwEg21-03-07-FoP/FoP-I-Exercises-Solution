@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
     // Declare the required variables
-    int workingHours;
-    double baseSalary, incometax; bonusPayment = 0.0;
+    int weeklyHours;
+    double baseSalary, incometax, bonusPayment = 0.0;
 
     // Input the details
     cout << "Enter base salary: ";
