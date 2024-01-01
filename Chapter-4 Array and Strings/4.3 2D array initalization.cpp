@@ -1,4 +1,4 @@
-// This program demonstarte 1D array initialization and printing the elements
+// This program demonstarte 2D array initialization and printing the elements
 
 #include <iostream>
 using namespace std;
