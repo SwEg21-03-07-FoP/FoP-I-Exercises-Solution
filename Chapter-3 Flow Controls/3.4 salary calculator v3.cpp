@@ -1,5 +1,9 @@
 
 // A program that used to calculate the salary of an employee.
+// The program will ask the user to enter the base salary and the number of working hours and the bonus rate per hour.
+// If the number of working hours is more than 40 hours,the program will calculate the bonus payment and add it to the gross salary.
+// The program will display the gross salary and the bonus payment.
+// The program will repeat the process until the user enters 0 to exit.
 
 #include <iostream>
 #include <iomanip>  // For setprecision

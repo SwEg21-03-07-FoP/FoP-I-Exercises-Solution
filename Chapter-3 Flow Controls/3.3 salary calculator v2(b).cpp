@@ -1,4 +1,9 @@
 // A program that used to calculate the salary of an employee.
+// The program will ask the user to enter the base salary and the number of hours worked in a week.
+// If the number of hours worked is more than 40 hours, the employee is entitled to a bonus payment.
+// The program will calculate the gross salary, bonus payment, income tax, pension and net salary. 
+// The income tax and net salary are calculated based on the gross salary. 
+// The pension is calculated based on the base salary.
 
 #include <iostream>
 #include <iomanip>  // For setprecision
