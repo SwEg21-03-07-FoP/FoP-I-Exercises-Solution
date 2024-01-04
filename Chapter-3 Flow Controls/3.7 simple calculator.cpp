@@ -1,6 +1,8 @@
-/* A simple calculator program in C++ that uses a switch statement to perform basic arithmetic operations.
-   The program will continue to take user input for operations until the user enters 0 to exit.
+/* A simple calculator program in C++ that uses a switch statement to perform 
+  the five basic arithmetic operations on two numbers enter by the user and display the result.
+  The program should continiously ask (promt) the user input 0 to exit.
 */
+
 #include <iostream>
 using namespace std;
 
