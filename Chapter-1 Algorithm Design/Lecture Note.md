@@ -1,15 +1,3 @@
-[Basics](#basics) | 
-[Why program?](#why) | 
-[Life cycle](#pdlc) |
-[Problem analysis](#analysis) | 
-[Algorithms](#algorithms) | 
-[Pseudocode & flowcharts](#represent) | 
-[Worked examples](#examples) |
-[Languages](#languages) |
-[Paradigms](#paradigms) |
-[Practice](#practice) | 
-[Readings](#readings)
-
 ## 1. Basics of program development
 
 Computer program
