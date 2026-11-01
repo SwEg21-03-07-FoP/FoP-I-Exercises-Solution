@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fundamentals of Programming I – Chapter 1 Notes</title>
+<style>
+:root{--bg:#fbfaf7;--card:#fff;--ink:#1c2230;--mute:#5b6475;--brand:#1f4e8c;--accent:#c9531e;--line:#e3e0d8;--code:#f1efe9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--card:#1c212c;--ink:#e8e9ee;--mute:#9aa3b5;--brand:#7fb0ee;--accent:#ee9363;--line:#2d3443;--code:#232938}}
+:root[data-theme="dark"]{--bg:#14171f;--card:#1c212c;--ink:#e8e9ee;--mute:#9aa3b5;--brand:#7fb0ee;--accent:#ee9363;--line:#2d3443;--code:#232938}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,"Times New Roman",serif}
+header{padding:2.5rem 1.25rem 1.5rem;max-width:860px;margin:auto}
+header small{font:600 .8rem system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 2rem/1.2 system-ui,sans-serif;margin:.4rem 0}
+header p{color:var(--mute);margin:.2rem 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5;overflow-x:auto;white-space:nowrap;padding:.5rem 1rem}
+nav a{font:500 .85rem system-ui,sans-serif;color:var(--brand);text-decoration:none;padding:.3rem .6rem;border-radius:99px;display:inline-block}
+nav a:hover{background:var(--code)}
+main{max-width:860px;margin:auto;padding:0 1.25rem 4rem}
+section{margin-top:2.5rem}
+h2{font:700 1.4rem system-ui,sans-serif;color:var(--brand);border-bottom:2px solid var(--line);padding-bottom:.3rem}
+h3{font:600 1.05rem system-ui,sans-serif;margin:1.4rem 0 .3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;margin:.8rem 0}
+.def{border-left:4px solid var(--brand)}
+.try{border-left:4px solid var(--accent)}
+.tag{font:700 .72rem system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
+.grid .card{margin:0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{border:1px solid var(--line);padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--code);font-family:system-ui,sans-serif}
+pre{background:var(--code);padding:.8rem 1rem;border-radius:8px;overflow-x:auto;font:.9rem/1.5 ui-monospace,Menlo,Consolas,monospace;margin:.6rem 0}
+pre.mermaid{background:transparent;text-align:center}
+code{font:.9em ui-monospace,Menlo,Consolas,monospace;background:var(--code);padding:.1em .3em;border-radius:4px}
+details{margin:.5rem 0}
+summary{cursor:pointer;font:600 .9rem system-ui,sans-serif;color:var(--brand)}
+ol.steps{padding-left:1.2rem}
+footer{max-width:860px;margin:auto;padding:1rem 1.25rem 3rem;color:var(--mute);font:.85rem system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header>
+<h1>Fundamentals of Programming I<br><br>Chapter 1: Basic Concepts of Programming</h1>
+</header>
+<nav>
+<a href="#basics">Basics</a><a href="#why">Why program?</a><a href="#pdlc">Life cycle</a><a href="#analysis">Problem analysis</a><a href="#algorithms">Algorithms</a><a href="#represent">Pseudocode &amp; flowcharts</a><a href="#examples">Worked examples</a><a href="#languages">Languages</a><a href="#paradigms">Paradigms</a><a href="#practice">Practice</a><a href="#check">Self-check</a><a href="#readings">Readings</a>
+</nav>
+<main>
+
+<section id="basics">
+<h2>1. Basics of program development</h2>
+<div class="card def"><span class="tag">Computer program</span><p>A self-contained set of explicit and unambiguous instructions that tells the computer to perform specific tasks. It says <em>what</em> to do and <em>how</em> to do it, determining the operations the machine carries out to solve a problem and produce a specific result. (A device driver is a program.)</p></div>
+<div class="card def"><span class="tag">Computer programming</span><p>Also called programming or coding: the skills used to design and develop programs, including writing, testing, debugging, troubleshooting and maintaining source code.</p></div>
+<div class="card def"><span class="tag">Software development life cycle</span><p>The overall process of software development.</p></div>
+</section>
+
+<section id="why">
+<h2>2. Reasons to study programming</h2>
+<div class="grid">
+<div class="card"><h3>Great job prospects</h3><p>Computers are nearly everywhere and most objects are now connected to them. We live in the digital age and technology keeps growing.</p></div>
+<div class="card"><h3>It makes things easier</h3><p>Chatting on a smartphone, switching appliances on or off, or unlocking a car with a button all use some kind of program.</p></div>
+<div class="card"><h3>It develops thinking</h3><p>Coding builds structured, creative and logical thinking, and teaches persistence.</p></div>
+<div class="card"><h3>You learn how to learn</h3><p>You also become more detail-oriented.</p></div>
+</div>
+</section>
+
+<section id="pdlc">
+<h2>3. Program development life cycle</h2>
+<p>Also called the software development procedure: a conceptual model of the stages of a software project, from the initial planning phase through maintenance of the finished application. It follows a scientific-method and systems approach, as used in science and engineering and in quantitative analysis.</p>
+<div class="scroll"><table>
+<tr><th>#</th><th>Stage</th><th>What happens</th></tr>
+<tr><td>1</td><td>Planning</td><td>Gather information from stakeholders and analyze it to decide what is feasible.</td></tr>
+<tr><td>2</td><td>Requirements analysis</td><td>Work with stakeholders and users to collect and document the project requirements.</td></tr>
+<tr><td>3</td><td>Design</td><td>Create the architecture of the software system and its elements (including prototyping).</td></tr>
+<tr><td>4</td><td>Implementation</td><td>The development team builds the software in a programming language.</td></tr>
+<tr><td>5</td><td>Testing and integration</td><td>Evaluate software quality to find and fix defects.</td></tr>
+<tr><td>6</td><td>Deployment</td><td>Release the software to users.</td></tr>
+<tr><td>7</td><td>Operations and maintenance</td><td>Update and support the software after it reaches the market.</td></tr>
+</table></div>
+<div class="card try"><span class="tag">Reading assignment</span><p>Why do we need an SDLC? Write half a page in your own words.</p></div>
+</section>
+
+<section id="analysis">
+<h2>4. Problem analysis</h2>
+<h3>What is a problem?</h3>
+<p>An undesirable situation that prevents an individual or organization from fully achieving its purpose, goals and objectives. Put another way, it is the gap between the existing and the desired situation. In computing this is a <em>computational problem</em>, which may be solved by an algorithm.</p>
+<p><strong>Example (a decision problem):</strong> the answer for every instance is yes or no. "Given a positive integer <code>n</code>, determine whether <code>n</code> is prime."</p>
+<h3>Problem solving</h3>
+<p>Problem solving is transforming the description of a problem into a solution, using knowledge of the problem domain and the ability to choose suitable strategies, techniques and tools. <strong>Programming is a process of problem solving</strong>, in three steps:</p>
+<ol class="steps"><li><strong>Problem analysis:</strong> understand the problem; identify the program's input and output.</li><li><strong>Algorithm design:</strong> design the solution.</li><li><strong>Coding:</strong> write a program in a programming language that matches the algorithm's steps.</li></ol>
+<h3>The three questions</h3>
+<p>Problem analysis defines the problem and breaks the system into smaller parts to find its inputs, processes and outputs.</p>
+<div class="grid">
+<div class="card"><h3>Input</h3><p>What data are available?</p></div>
+<div class="card"><h3>Process</h3><p>What method leads from the data to the results?</p></div>
+<div class="card"><h3>Output</h3><p>What results does the program have to produce?</p></div>
+</div>
+<p><strong>Why analyze first?</strong> To understand the real-world problem and user needs, and to propose and validate abstract solutions before jumping into development.</p>
+</section>
+
+<section id="algorithms">
+<h2>5. Algorithm design</h2>
+<div class="card def"><span class="tag">Algorithm</span><p>A well-defined, step-by-step, finite set of instructions that specifies a sequence of operations to solve a specific problem or a class of problems. It is independent of any programming language and can be described graphically or in natural language.</p></div>
+<p>The path is: <strong>computational problem → algorithm</strong> (design and analysis) <strong>→ program</strong> (programming).</p>
+<h3>Why algorithms?</h3>
+<p>A computer is an "algorithm-responding" machine, not a "heuristic-responding" one. You cannot tell it to do things directly; it needs a detailed, step-by-step set of instructions for any activity, and together these form an algorithm.</p>
+<h3>Characteristics of an algorithm</h3>
+<div class="scroll"><table>
+<tr><th>Property</th><th>Meaning</th></tr>
+<tr><td>Definiteness</td><td>Each instruction is clear and unambiguous.</td></tr>
+<tr><td>Finiteness</td><td>It terminates after a finite number of steps.</td></tr>
+<tr><td>Input</td><td>A finite number of inputs (zero or more).</td></tr>
+<tr><td>Output</td><td>At least one well-defined output matching the desired result.</td></tr>
+<tr><td>Effectiveness</td><td>Each instruction is basic enough to be carried out (feasible).</td></tr>
+</table></div>
+</section>
+
+<section id="represent">
+<h2>6. Pseudocode and flowcharts</h2>
+<p>The two most common ways to represent an algorithm.</p>
+<div class="grid">
+<div class="card"><h3>Pseudocode</h3><p>A detailed description of what a program must do, written in natural language (such as English) and mathematical symbols instead of a programming language. It is a semi-programming language for describing algorithm steps.</p></div>
+<div class="card"><h3>Flowchart</h3><p>A diagram of the algorithm: steps are boxes of various kinds (rectangles, diamonds, ovals) and their order is shown by connecting arrows.</p></div>
+</div>
+<h3>Flowchart symbols</h3>
+<div class="scroll"><table>
+<tr><th>Name</th><th>Shape</th><th>Usage</th></tr>
+<tr><td>Start or Stop (terminal)</td><td>Oval</td><td>The beginning and end points of the sequence.</td></tr>
+<tr><td>Process</td><td>Rectangle</td><td>An instruction or operation to be carried out.</td></tr>
+<tr><td>Decision</td><td>Diamond</td><td>A yes/no decision with two or more alternatives.</td></tr>
+<tr><td>Input or Output</td><td>Parallelogram</td><td>Data received by the computer, or a result sent from it.</td></tr>
+<tr><td>Connector</td><td>Small circle</td><td>A jump from one point to another; avoids crossing lines.</td></tr>
+<tr><td>Direction of flow</td><td>Arrow</td><td>Connects symbols and shows the order of instructions.</td></tr>
+</table></div>
+</section>
+
+<section id="examples">
+<h2>7. Worked examples</h2>
+<h3>Example 1: area and perimeter of a rectangle</h3>
+<p><strong>Analysis.</strong> Input: length, width. Processing: area = length × width; perimeter = 2 × (length + width). Output: area, perimeter.</p>
+<pre>Start
+Read L, W
+area = L * W
+perimeter = 2 * (L + W)
+Print area
+Print perimeter
+End</pre>
+<h3>Example 2: total salary</h3>
+<p><strong>Analysis.</strong> Input: Salary, Overtime. Processing: Total_Sal = Salary + Overtime. Output: Total_Sal.</p>
+<pre>Start
+Read Salary
+Read Overtime
+Total_Sal = Salary + Overtime
+Print Total_Sal
+End</pre>
+<h3>Example 3: sum of the even integers from 2 to 30</h3>
+<p><strong>Analysis.</strong> Input: none. Processing: Sum = 2 + 4 + 6 + … + 30. Output: Sum.</p>
+<pre>Start
+Counter = 2, Sum = 0
+While Counter &lt;= 30
+    Sum = Sum + Counter
+    Counter = Counter + 2
+End while
+Print Sum
+End</pre>
+<pre class="mermaid">flowchart TD
+A([Start]) --> B[Counter = 2, Sum = 0]
+B --> C{"Counter &lt;= 30?"}
+C -- yes --> D[Sum = Sum + Counter]
+D --> E[Counter = Counter + 2]
+E --> C
+C -- no --> F[/Print Sum/]
+F --> G([End])</pre>
+</section>
+
+<section id="languages">
+<h2>8. Programming languages</h2>
+<p>An artificial language used to control the behavior of a machine, particularly a computer. Like natural languages (such as Amharic), programming languages are defined by syntactic and semantic rules describing their structure and meaning. More specifically, a programming language is:</p>
+<ul><li>a set of written symbols that instruct computer hardware to perform the required operations;</li><li>a linguistic framework for describing computations;</li><li>a set of rules for communicating an algorithm to a computer;</li><li>a tool for developing executable models for a class of problem domains.</li></ul>
+<h3>Types and generations</h3>
+<p><strong>Low-level:</strong> machine language, assembly language. <strong>High-level:</strong> C, C++, Java.</p>
+<div class="scroll"><table>
+<tr><th>Generation</th><th>Type</th><th>Traits</th></tr>
+<tr><td>1st</td><td>Machine language</td><td>0s and 1s; long, difficult programming.</td></tr>
+<tr><td>2nd</td><td>Assembly language</td><td>Assembles repetitive instructions; shorter code.</td></tr>
+<tr><td>3rd</td><td>Procedural languages</td><td>Include commands; shorter code.</td></tr>
+<tr><td>4th</td><td>Nonprocedural languages</td><td>Application generators; commands specify results.</td></tr>
+<tr><td>5th</td><td>Intelligent languages</td><td>Natural-language processing.</td></tr>
+</table></div>
+<p>Progress runs from machine-oriented toward human-oriented (natural) language. There are more than 2,400 programming languages today.</p>
+</section>
+
+<section id="paradigms">
+<h2>9. Programming paradigms</h2>
+<p>A paradigm is a style, or "way", of programming. It describes how a program should be written and does not refer to one specific language; a language may follow one paradigm or several.</p>
+<div class="scroll"><table>
+<tr><th>Paradigm</th><th>Description</th><th>Model</th><th>Examples</th></tr>
+<tr><td>Imperative (procedural)</td><td>Statements directly change program state (data fields).</td><td>Program = algorithms + data. Good for decomposition.</td><td>C, C++, Java, PHP, Python, Ruby</td></tr>
+<tr><td>Logical (declarative)</td><td>Defines the program's logic, not detailed control flow.</td><td>Program = facts + rules. Good for searching.</td><td>Prolog, SQL, CSS</td></tr>
+<tr><td>Functional</td><td>Computation as evaluation of mathematical functions, avoiding state.</td><td>Program = functions of functions. Good for reasoning.</td><td>C++, Lisp, Python, JavaScript</td></tr>
+<tr><td>Object-oriented</td><td>Data fields are objects manipulated only through predefined methods.</td><td>Program = objects + messages. Good for modelling.</td><td>C++, C#, Java, PHP, Python</td></tr>
+</table></div>
+</section>
+
+<section id="practice">
+<h2>10. Practice problems</h2>
+<p>For each one, write the analysis (input, process, output), then pseudocode, then draw the flowchart.</p>
+<div class="card try"><span class="tag">Exercise 1</span><p>Identify whether a number is positive or negative.</p>
+<details><summary>Hint</summary><p>This needs a decision symbol. What should happen when the number is zero?</p></details>
+<details><summary>Show solution</summary><pre>Start
+Read N
+If N &gt; 0 then
+    Print "Positive"
+Else if N &lt; 0 then
+    Print "Negative"
+Else
+    Print "Zero"
+End if
+End</pre></details></div>
+<div class="card try"><span class="tag">Exercise 2</span><p>Read a value <code>n</code> and display the sum of the numbers from 1 up to <code>n</code>. For n = 5 the output is 15 (1 + 2 + 3 + 4 + 5).</p>
+<details><summary>Hint</summary><p>Use a counter and a running sum, like Example 3, but start at 1 and add 1 each time.</p></details>
+<details><summary>Show solution</summary><pre>Start
+Read n
+Counter = 1, Sum = 0
+While Counter &lt;= n
+    Sum = Sum + Counter
+    Counter = Counter + 1
+End while
+Print Sum
+End</pre></details></div>
+<div class="card try"><span class="tag">Exercise 3</span><p>Accept an initial bank balance, then a sequence of transactions (positive = credit, negative = debit). Input ends with a zero entry. Print the new balance.</p>
+<details><summary>Show solution</summary><pre>Start
+Read Balance
+Read T
+While T != 0
+    Balance = Balance + T
+    Read T
+End while
+Print Balance
+End</pre><p>A credit is positive and a debit is negative, so one addition handles both. The zero entry is the sentinel that ends the loop.</p></details></div>
+<div class="card try"><span class="tag">Exercise 4</span><p>Calculate Zakat: the user enters an amount and the program shows <code>(2.5 / 100) * amount</code>. Zakat is not calculated if the amount is less than 1000.</p>
+<details><summary>Show solution</summary><pre>Start
+Read Amount
+If Amount &gt;= 1000 then
+    Zakat = (2.5 / 100) * Amount
+    Print Zakat
+Else
+    Print "No Zakat is due"
+End if
+End</pre></details></div>
+</section>
+
+<section id="check">
+<h2>Self-check questions</h2>
+<p>Answer each one in your head or on paper, then open the answer.</p>
+<div class="card"><p><strong>1.</strong> What are the three steps of programming as problem solving?</p><details><summary>Answer</summary><p>Problem analysis, algorithm design, then coding.</p></details></div>
+<div class="card"><p><strong>2.</strong> Name the five characteristics of an algorithm.</p><details><summary>Answer</summary><p>Definiteness, finiteness, input, output and effectiveness.</p></details></div>
+<div class="card"><p><strong>3.</strong> Which flowchart symbol shows a yes/no decision, and which shows input or output?</p><details><summary>Answer</summary><p>A diamond for the decision; a parallelogram for input or output.</p></details></div>
+<div class="card"><p><strong>4.</strong> Why should you analyze a problem before writing code?</p><details><summary>Answer</summary><p>To understand the real problem and user needs, and to propose and validate abstract solutions before development starts.</p></details></div>
+<div class="card"><p><strong>5.</strong> Does a paradigm belong to one specific language?</p><details><summary>Answer</summary><p>No. A paradigm is a style of programming, and a language can follow one or several (Python supports imperative, functional and object-oriented styles).</p></details></div>
+</section>
+
+<section id="summary">
+<h2>Summary</h2>
+<p>In this chapter you learned how to transform computational problems into solutions. You practiced analyzing problems, constructing flowcharts and writing pseudocode.</p>
+</section>
+
+<section id="readings">
+<h2>Reading resources</h2>
+<ul>
+<li>Savitch, W. <em>Problem Solving with C++</em>, 10th ed., 2018: Chapters 1–3.</li>
+<li>Zak, D. <em>An Introduction to Programming with C++</em>, 8th ed., Cengage, 2016: Chapters 2–3.</li>
+<li>Deitel, P. and Deitel, H. <em>C++ How to Program</em>, 10th ed., Global Edition, 2017: Chapter 2.</li>
+</ul>
+</section>
+</main>
+<footer>Fundamentals of Programming I · Addis Ababa Science and Technology University</footer>
+
+<!--claude-mermaid-runtime-begin:3477-->
+<style>.mermaid-diagram{margin-block:4px}.mermaid-diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}</style>
+<script src="/_runtime/mermaid-11.16.1.min.js"></script>
+<script>(function(){
+var CFG={"palettes":{"light":{"surface":"#f4efe4","text":"#42392e","line":"#8a7f6d","border":"#7a6c52","bg":"#fffdf8"},"dark":{"surface":"#262b34","text":"#f2f3f5","line":"#a8adb8","border":"#9aa4b8","bg":"#1f232b"}}};
+if(typeof mermaid==='undefined')return;
+var pres=Array.prototype.slice.call(document.querySelectorAll('pre.mermaid')).filter(function(p){if(p.hasAttribute('data-claude-mermaid-claimed'))return false;p.setAttribute('data-claude-mermaid-claimed','1');return true;});
+if(!pres.length)return;
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var root=document.documentElement;
+var items=pres.map(function(pre){
+var mount=document.createElement('div');mount.className='mermaid-diagram';
+return {pre:pre,mount:mount,src:pre.textContent||''};
+});
+var seq=0;
+var renderGen=0;
+var lastKey='';
+function pageBg(fallback){
+var els=[document.body,document.documentElement];
+for(var i=0;i<els.length;i++){
+var c=els[i]&&getComputedStyle(els[i]).backgroundColor;
+if(c&&c!=='transparent'&&c!=='rgba(0, 0, 0, 0)')return c;
+}
+return fallback;
+}
+function render(){
+var theme=root.getAttribute('data-theme');
+var dark=theme==='dark'||(!!(mq&&mq.matches)&&theme!=='light');
+var pal=dark?CFG.palettes.dark:CFG.palettes.light;
+var bg=pageBg(pal.bg);
+var key=(dark?'d':'l')+'|'+bg;
+if(key===lastKey)return;
+lastKey=key;
+var gen=++renderGen;
+var font=getComputedStyle(document.body).fontFamily||'sans-serif';
+var nat={useMaxWidth:false};
+mermaid.initialize({
+startOnLoad:false,securityLevel:'strict',theme:'base',
+flowchart:nat,sequence:nat,er:nat,state:nat,class:nat,pie:nat,
+gantt:nat,journey:nat,timeline:nat,gitGraph:nat,mindmap:nat,xyChart:nat,
+quadrantChart:nat,sankey:nat,c4:nat,requirement:nat,block:nat,
+packet:nat,kanban:nat,architecture:nat,radar:nat,
+themeVariables:{background:bg,mainBkg:pal.surface,primaryColor:pal.surface,
+primaryTextColor:pal.text,lineColor:pal.line,primaryBorderColor:pal.border,
+nodeBorder:pal.border,clusterBorder:pal.border,edgeLabelBackground:bg,
+clusterBkg:'rgba(127,127,127,0.07)',titleColor:pal.text,
+darkMode:dark,rowOdd:bg,rowEven:'rgba(127,127,127,0.07)',
+attributeBackgroundColorOdd:bg,attributeBackgroundColorEven:'rgba(127,127,127,0.07)',
+fontSize:'16px',fontFamily:font},
+themeCSS:'.node rect, .node circle, .node polygon, .node path, .cluster rect { stroke-width: 2px; }'
+});
+items.forEach(function(it){
+var id='claude-mermaid-'+seq++;
+mermaid.render(id,it.src).then(function(r){
+if(gen!==renderGen)return;
+var prev=it.pre.previousElementSibling;
+if(prev&&prev.className==='mermaid-diagram'&&prev!==it.mount)return;
+it.mount.innerHTML=r.svg;
+if(!it.mount.parentNode)it.pre.parentNode.insertBefore(it.mount,it.pre);
+it.pre.style.display='none';
+},function(){
+var scratch=document.getElementById(id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+scratch=document.getElementById('d'+id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+if(gen!==renderGen)return;
+if(it.mount.parentNode)it.mount.parentNode.removeChild(it.mount);
+it.pre.style.display='';
+});
+});
+}
+render();
+if(mq&&mq.addEventListener)mq.addEventListener('change',render);
+if(typeof MutationObserver!=='undefined')new MutationObserver(render).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();</script>
+<!--claude-mermaid-runtime-end-->
+</body>
+</html>
